@@ -22,6 +22,11 @@
     justify-content: flex-start;
   }
 }
+@media (max-width: 768px) {
+  .card-img-side {
+    flex-direction: column;
+  }
+}
 .card-body {
   padding: 0.9rem;
   p {
