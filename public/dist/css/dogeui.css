@@ -24,6 +24,7 @@ html {
   --green: #38a169;
   --skyblue: #3182ce;
   --darkBlue: #00214d;
+  --orange: #dd6b20;
 }
 
 a {
@@ -159,42 +160,42 @@ small,
 
 .badge-success {
   color: white;
-  background-color: #38a169;
+  background-color: var(--green);
 }
 
 .badge-error {
   color: white;
-  background-color: #e53e3e;
+  background-color: var(--red);
 }
 
 .badge-info {
   color: white;
-  background-color: #3182ce;
+  background-color: var(--skyblue);
 }
 
 .badge-warning {
   color: white;
-  background-color: #dd6b20;
+  background-color: var(--orange);
 }
 
 .badge-outline-success {
-  color: #38a169;
-  border: 2px solid #38a169;
+  color: var(--green);
+  border: 2px solid var(--green);
 }
 
 .badge-outline-error {
-  color: #e53e3e;
-  border: 2px solid #e53e3e;
+  color: var(--red);
+  border: 2px solid var(--red);
 }
 
 .badge-outline-info {
-  color: #3182ce;
-  border: 2px solid #3182ce;
+  color: var(--skyblue);
+  border: 2px solid var(--skyblue);
 }
 
 .badge-outline-warning {
-  color: #dd6b20;
-  border: 2px solid #dd6b20;
+  color: var(--orange);
+  border: 2px solid var(--orange);
 }
 
 /*5. Buttons*/
@@ -295,6 +296,8 @@ small,
 }
 
 .rounded {
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 
