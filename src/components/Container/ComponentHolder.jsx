@@ -17,9 +17,10 @@ export default function ComponentHolder({ children, code, title }) {
   function handleCopy(code) {
     navigator.clipboard.writeText(code)
   }
+
   return (
     <div className="py-12">
-      <div className="bg-white dark:bg-primary-600 dark:text-white overflow-hidden shadow rounded-lg">
+      <div className="bg-white dark:bg-primary-600 dark:text-white overflow-hidden shadow rounded-lg ">
         <div className="px-4 py-5 sm:px-6 flex justify-between">
           <div>
             <p>{title}</p>
@@ -42,19 +43,20 @@ export default function ComponentHolder({ children, code, title }) {
           </div>
         </div>
         {showCode ? (
-          <pre className="bg-primary-800 w-full overflow-x-auto  text-gray-200 px-4 py-5 sm:p-6">
+          <div className="bg-primary-800 w-full overflow-x-auto  text-gray-200 px-4 py-5 sm:p-6">
             {code && loading ? (
               <div className="flex items-center justify-center">
                 <Spinner /> Loading snippet...
               </div>
             ) : null}
+
             {code ? (
               <div className="relative">
                 <iframe
                   title="code"
                   loading="lazy"
                   onLoad={handleLoading}
-                  className="w-full "
+                  className="w-full min-h-full"
                   src={getURL(code)}
                   ref={iframeRef}
                   sandbox="allow-scripts allow-same-origin"
@@ -69,7 +71,7 @@ export default function ComponentHolder({ children, code, title }) {
             ) : (
               "No code snippet available."
             )}
-          </pre>
+          </div>
         ) : (
           <Resizable
             enable={{ top: false, bottom: false, left: false, right: true }}
@@ -77,7 +79,7 @@ export default function ComponentHolder({ children, code, title }) {
             bounds="parent"
             minWidth={250}
           >
-            <div className="bg-gray-100 dark:bg-primary-700 px-4 py-5 sm:p-6  border-r border-gray-600">
+            <div className="bg-gray-100 dark:bg-primary-700 px-4 py-5 sm:p-6  border-r border-gray-600 overflow-x-auto">
               {children}
             </div>
           </Resizable>
